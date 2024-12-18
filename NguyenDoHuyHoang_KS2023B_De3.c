@@ -109,7 +109,6 @@ int main() {
         printf("=========================================\n");
         printf("nhap lua chon: ");
         scanf("%d", &choice);
-
         switch (choice) {
         case 1:
             printf("nhap phan tu muon them: ");
@@ -117,14 +116,16 @@ int main() {
             push(&stack, value);
             break;
         case 2:
-            if (pop(&stack) == -1){
+            if (isEmpty(&stack)){
+                printf("ngan xep rong\n");
                 break;
             } else {
                 printf("phan tu duoc lay ra: %d\n", pop(&stack));
             }
             break;
         case 3:
-            if (peek(&stack) == -1){
+            if (isEmpty(&stack)){
+                printf("ngan xep rong\n");
                 break;
             } else {
                 printf("phan tu tren cung la: %d\n", peek(&stack));
@@ -148,7 +149,7 @@ int main() {
             printf("NULL");
             printf("\n");
             break;
-        case 9:
+        case 0:
             printf("thoat chuong trinh\n");
             break;
         default:
